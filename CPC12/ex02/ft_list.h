@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crossart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/01 09:32:48 by crossart          #+#    #+#             */
-/*   Updated: 2020/10/01 16:48:15 by crossart         ###   ########.fr       */
+/*   Created: 2020/10/01 09:53:11 by crossart          #+#    #+#             */
+/*   Updated: 2020/10/01 16:34:33 by crossart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include <stdlib.h>
+#ifndef FT_LIST_H
 
-t_list		*ft_create_elem(void *data)
+# define FT_LIST_H
+
+typedef struct		s_list
 {
-	t_list *l;
-
-	l = malloc(sizeof(t_list));
-	if (l != '\0')
-	{
-		l->data = data;
-		l->next = NULL;
-	}
-	return (l);
-}
+	struct s_list	*next;
+	void			*data;
+}					t_list;
+t_list				*ft_create_elem(void *data);
+#endif
